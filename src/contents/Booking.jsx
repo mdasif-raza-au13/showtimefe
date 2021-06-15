@@ -8,7 +8,7 @@ const Booking = () => {
 
     useEffect(() =>{    
         const getCities = async () => {
-            const res = await axios.get('http://localhost:5000/api/cities')
+            const res = await axios.get('https://showtimebe.herokuapp.com/api/cities')
             setcityresult(res.data)
             console.log(res)
         }
@@ -17,7 +17,7 @@ const Booking = () => {
 
     useEffect(() =>{    
         const getTheaters = async () => {
-            const res = await axios.get('http://localhost:5000/api/theaters')
+            const res = await axios.get('https://showtimebe.herokuapp.com/api/theaters')
             settheaterresult(res.data)
             console.log(res)
         }
