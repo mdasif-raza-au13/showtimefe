@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react'
 import { Link } from 'react-router-dom'
-// import Show from '../contents/Show';
+import Show from '../contents/Show';
 // import Login from '../Signup/Login';
 import './style.css';
 
@@ -15,8 +15,6 @@ export const Navbar = () => {
 
     return (
         <>
-            <Name.Provider value={search}>
-
                 <div className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#CED3DC" }}>
                     <div className="container-fluid">
 
@@ -28,8 +26,7 @@ export const Navbar = () => {
                     </div>
 
                 </div>
-            </Name.Provider>
-            {/* <Show name={search} /> */}
+            <Show name={search} />
         </>
     )
 }

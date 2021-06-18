@@ -49,7 +49,7 @@ function Cards() {
                 </Card.Footer>
             </Card>
         </CardGroup>
-        <li > <Link to={'/home'} className="nav_link" style={{ color: "red", fontSize: "large" }}> Back To Home   </Link></li>
+        <li > <Link to={'/'} className="nav_link" style={{ color: "red", fontSize: "large" }}> Back To Home   </Link></li>
 
             
         </>
