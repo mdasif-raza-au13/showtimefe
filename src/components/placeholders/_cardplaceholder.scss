@@ -1,0 +1,39 @@
+.card-placeholder {
+  width: 20.5rem;
+  height: 370px;
+}
+
+@media only screen and (max-width: 800px) {
+  .card-placeholder {
+    width: 11rem;
+    height: 200px;
+  }
+  .city-modal-place {
+    width: 100% !important;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .cmodal-place-wrapper {
+      .cmodal-spinner {
+        width: 50px !important;
+        height: 50px !important;
+      }
+    }
+  }
+}
+
+.city-modal-place {
+  width: 100%;
+  height: 300px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .cmodal-place-wrapper {
+    .cmodal-spinner {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
