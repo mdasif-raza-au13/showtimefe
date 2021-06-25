@@ -1,40 +1,35 @@
-import './App.css';
-import Navbar from './components/Navbar'
-import Login from './Signup/Login'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Cards from './Upcomming/index'
-import Body from './components/Body'
-import Booking from './contents/Booking'
-import AddCityTheater from './admin/AddCityTheater'
-// import Welcome from './Welcome/index'
+// @ts-nocheck
+import React, { Component } from 'react';
+import { ThemeProvider } from '@material-ui/core/styles';
 
+//Redux
+import { Provider } from 'react-redux';
+import store from './store';
+import { loadUser } from './store/actions';
 
-function App() {
-  return (
-    <Router>
-      <>
-        {/* <Navbar /> */}
-        <Switch>
-          {/* <Route exact path="/" component={Welcome}/> */}
-          {/* <Route exact path="/" component={Body} /> */}
-          <Route exact path="/" component={Navbar} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/upcomming" component={Cards} />
-          <Route exact path="/booking" component={Booking} />
-          <Route exact path="/admin" component={AddCityTheater} />
-        </Switch>
-        {/* <Body /> */}
+import theme from './theme';
+// import { Alert } from './components';
+// import { pageCursors } from './utils';
+import Routes from './Routes';
 
-        {/* <Login /> */}
+import './assets/scss/index.scss';
+import 'typeface-montserrat';
+import { CssBaseline } from '@material-ui/core';
 
-
-
-
-
-
-      </>
-    </Router>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {/* <Alert /> */}
+          <Routes />
+          <div className="cursor" id="cursor" />
+          <div className="cursor2" id="cursor2" />
+          <div className="cursor3" id="cursor3" />
+        </ThemeProvider>
+      </Provider>
+    );
+  }
 }
-
 export default App;
