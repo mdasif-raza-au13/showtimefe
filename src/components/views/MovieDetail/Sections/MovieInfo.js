@@ -1,13 +1,18 @@
 import React from 'react'
 import { Descriptions, Badge, Button } from 'antd';
+import { useSelector } from 'react-redux';
 
 function MovieInfo(props) {
 
+    const user = useSelector(state => state.user)
     const { movie } = props;
 
-    // function handleClick(){
-    //   alert("Movie book")
-    // }
+    function handleClick(){
+      if (user.userData && !user.userData.isAuth) {
+        return alert('Please Log in first');
+    }else{
+      return alert("Movie book")
+    }}
     
     return (
       <>
@@ -23,7 +28,7 @@ function MovieInfo(props) {
         <Descriptions.Item label="status">{movie.status}</Descriptions.Item>
         <Descriptions.Item label="popularity">{movie.popularity}</Descriptions.Item>
       </Descriptions>
-      <Button type="primary" value="Default" onClick={() => alert("Thank you for Booking")}>Booking</Button>
+      <Button type="primary" value="Default" onClick={handleClick}>Booking</Button>
     </>
     )
 }
